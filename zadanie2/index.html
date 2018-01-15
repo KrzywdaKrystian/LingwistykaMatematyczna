@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zadanie 2</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <h4>Polecenie:</h4>
+    <p>
+        Wykorzystując niedeterministyczny automat skończony (NFA) napisz program akceptujący tylko te słowa, w których tylko jeden blok może mieć długość większą niż 2. Przez blok rozumiany jest maksymalny ciąg sąsiednich identycznych liter w słowie. Automat ma działać nad alfabetem alfabetem {a, b}.
+    </p>
+    <h4>Rozwiązanie:</h4>
+
+    <div class="nfa">
+        <div class="form-group">
+            <input id="nfa-string" class="form-control" placeholder="Wprowadż ciąg znaków" type="text">
+            <div id="sequance"></div>
+        </div>
+        <canvas id="stage"></canvas>
+    </div>
+    <div class="nfa-table">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <td></td>
+                <td>a</td>
+                <td>b</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>q0</td>
+                <td>q1</td>
+                <td>q1</td>
+            </tr>
+            <tr>
+                <td>q1</td>
+                <td>q2, q4</td>
+                <td>q3, g5</td>
+            </tr>
+            <tr>
+                <td>q2</td>
+                <td>-</td>
+                <td>q1</td>
+            </tr>
+            <tr>
+                <td>q3</td>
+                <td>q1</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>q4</td>
+                <td>q6</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>q5</td>
+                <td>-</td>
+                <td>q7</td>
+            </tr>
+            <tr>
+                <td>q6</td>
+                <td>q6, q8</td>
+                <td>q8</td>
+            </tr>
+            <tr>
+                <td>q7</td>
+                <td>q8</td>
+                <td>q7, q8</td>
+            </tr>
+            <tr>
+                <td>q8</td>
+                <td>q10</td>
+                <td>q9</td>
+            </tr>
+            <tr>
+                <td>q9</td>
+                <td>q8</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>q10</td>
+                <td>-</td>
+                <td>q8</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="nfa.js"></script>
+</body>
+</html>

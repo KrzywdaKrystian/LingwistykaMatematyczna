@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zadanie 3</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <h4>Polecenie:</h4>
+    <p>
+        Wykorzystując maszynę Turinga zaproponuj program dodający do siebie dwie dowolne dodatnie liczby binarne,
+        oddzielone od siebie znakiem '#'.
+    </p>
+    <ul>
+        <li>Program powinien wczytywać zawartość taśmy z pliku (symbole E można zastąpić symbolem E).</li>
+        <li>Program powinien pokazywać położenie głowicy i aktualny stan taśmy w każdym kroku.</li>
+        <li>Program musi wykorzystywać algorytm maszyny Turinga, to znaczy muszą istnieć</li>
+        zdefiniowane stany i przejścia między nimi.</li>
+        <li>Język programowania dowolny - C/C++, JAVA, C# itp.</li>
+        <li>Oprócz programu należy dołączyć schemat blokowy przedstawiający działanie</li>
+        maszyny Turinga oraz tablicę przejść.</li>
+        <li>Program w wersji z GUI, z aktualnym stanem taśmy oraz pozycją głowicy po każdym wykonanym kroku oraz z
+            zaznaczeniem aktualnego stanu, w którym się znajduje – ocena 5.
+        </li>
+        <li>Program w wersji z GUI, z aktualnym stanem taśmy oraz pozycją głowicy po każdym wykonanym kroku – ocena
+            4.
+        </li>
+        <li>Program w wersji konsolowej, z aktualnym stanem taśmy i zaznaczeniem pozycji głowicy w każdym ruchu –
+            ocena 3.
+        </li>
+    </ul>
+
+    <div class="form">
+        <div class="form-group">
+            <p>Wprowadź zawartość taśmy</p>
+            <!--<input id="turing-query" class="form-control" placeholder="Zawartość taśmy" value="EEEE11#11EEEEEE" type="text">-->
+            <input id="turing-query" class="form-control" placeholder="Zawartość taśmy" value="EEEE1001#11111EEEEEE" type="text">
+            <br>
+            <button class="btn btn-default" id="turing-count">Generuj</button>
+        </div>
+    </div>
+
+    <div id="turing-body" class="turing hide">
+        <div id="head"></div>
+        <table class="table table-bordered" id="turing-table">
+            <tr class="table-row"></tr>
+        </table>
+        <div style="margin-bottom: 20px;">
+            <button class="btn btn-default" id="turing-start">Start</button>
+            <button class="btn btn-primary" id="turing-step">Krok</button>
+            <button class="btn btn-success" id="turing-fast">Szybko</button>
+            <button class="btn btn-danger" id="turing-reset">Resetuj</button>
+            <div style="float: right;">
+                Aktualny stan: <span id="current-state" style="margin-right: 20px;">q0</span>
+            </div>
+
+        </div>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <td></td>
+                <td>0</td>
+                <td>1</td>
+                <td>#</td>
+                <td>E</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>q0</td>
+                <td>q1, -, R</td>
+                <td>q1, -, R</td>
+                <td>q1, -, R</td>
+                <td>q0, -, R</td>
+            </tr>
+            <tr>
+                <td>q1</td>
+                <td>q1, -, R</td>
+                <td>q1, -, R</td>
+                <td>q1, -, R</td>
+                <td>q2, -, L</td>
+            </tr>
+            <tr>
+                <td>q2</td>
+                <td>q2, <b>1</b>, L</td>
+                <td>q3, <b>0</b>, L</td>
+                <td>q5, -, R</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>q3</td>
+                <td>q3, -, L</td>
+                <td>q3, -, L</td>
+                <td>q4, -, L</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>q4</td>
+                <td>q1, <b>1</b>, R</td>
+                <td>q4, <b>0</b>, L</td>
+                <td>-</td>
+                <td>q1, <b>1</b>, R</td>
+            </tr>
+            <tr>
+                <td>q5</td>
+                <td>q5, <b>0</b>, R</td>
+                <td>q5, <b>0</b>, R</td>
+                <td>-</td>
+                <td>q6, -, -</td>
+            </tr>
+            <tr>
+                <td>q6</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            </tbody>
+            <tr></tr>
+        </table>
+    </div>
+</div>
+
+<script src="turing.js"></script>
+</body>
+</html>

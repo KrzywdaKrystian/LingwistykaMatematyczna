@@ -1,0 +1,27 @@
+.container {
+    padding: 20px;
+}
+
+table { text-align: center; position: relative; }
+.turing { position: relative;;
+    margin: 50px 0;
+}
+table { z-index: 1;}
+#head { position: absolute; content: ""; left: 0%; top: -6px; margin-left: -12px; z-index: 2;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 10px 0 10px;
+    border-color: #a30a0a transparent transparent transparent;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear ;
+    -ms-transition: all .1s linear ;
+    -o-transition: all .1s linear ;
+    transition: all .1s linear ;
+}
+.table-danger {
+    background-color: #f2dede;
+}
+.table-success {
+    background-color: #dff0d8;
+}

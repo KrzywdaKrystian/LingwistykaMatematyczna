@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zadanie 4</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <h4>Polecenie:</h4>
+    <h4>Etap 1:</h4>
+    <p>
+        Napisz program, który będzie obliczał wartość wyrażenia podanego w postaci ONP. Program ma działać na liczbach całkowitych, możliwe operacje: dodawania, odejmowanie, mnożenie, dzielenie i potęgowanie.
+    </p>
+    <p>Przykład działania programu:</p>
+    <ul>
+        <li>dane wejściowe: 2 5 * 1 + 2 /,</li>
+        <li>wynik działania programu: 5.5.</li>
+    </ul>
+    <h4>Etap 2:</h4>
+    <p>Rozbuduj program napisany w poprzednim etapie o graficzny interfejs użytkownika, który będzie miał miejsce na wpisywanie wyrażenia. Program musi również posiadać przycisk, który umożliwi rozpoczęcie wykonywania obliczeń oraz okienko lub pole, w którym będzie wyświetlane wyrażenie w postaci ONP.</p>
+    <h4>Rozwiązanie:</h4>
+
+    <div class="nfa">
+        <div class="form-group">
+            <p>Wprowadź wyrażenie, znaki musza być odzielone spacją</p>
+            <input id="onp-query" class="form-control" placeholder="Wprowadż ciąg znaków" value="2 5 * 1 + 2 /" type="text">
+            <br>
+            <button class="btn" id="onp-count">Oblicz</button>
+        </div>
+    </div>
+    <div class="nfa-table">
+        <table class="table table-bordered" id="onp-table">
+            <thead>
+            <tr>
+                <td>in</td>
+                <td>stack</td>
+                <td>output</td>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+
+<script src="onp.js"></script>
+</body>
+</html>

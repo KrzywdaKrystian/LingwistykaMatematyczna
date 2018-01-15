@@ -1,0 +1,30 @@
+.container {
+    padding: 20px;
+}
+
+table { text-align: center; position: relative; }
+.turing { position: relative;;
+    margin: 50px 0;
+}
+table { z-index: 1;}
+#head { position: absolute; content: ""; left: 0%; top: -6px; margin-left: -12px; z-index: 2;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 10px 0 10px;
+    border-color: #a30a0a transparent transparent transparent;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear ;
+    -ms-transition: all .3s linear ;
+    -o-transition: all .3s linear ;
+    transition: all .3s linear ;
+}
+
+.is-valid {
+    border-color: #28a745!important;
+    background-color: #dff0d8;
+}
+.is-invalid {
+    border-color: #dc3545!important;
+    background-color: #dca5b2 !important;
+}
